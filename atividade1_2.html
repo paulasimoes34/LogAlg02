@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1.2</title>
+</head>
+<body>
+    
+<div id="output"></div>
+<script>
+
+var nomeFun1 = prompt( 'Nome do funcionario');
+var meses1 = Number (prompt('Tempo de serviço'));
+var salario1 = Number (prompt('O salário médio em reais'));
+var idade = Number (prompt('idade do funcionário'));
+output.innerHTML = `
+Nome: ${nomeFun1} <br> 
+Tempo de serviço: ${meses1} <br> 
+Salário médio: ${salario1} <br> 
+Idade: ${idade} <br> 
+
+`;
+
+if(meses1>=12){
+    var abono = Number ((salario1 *10/100));
+    var salario1final = Number (salario1+abono+1*idade);
+}
+else{
+    var abono = Number (salario1*0);
+    var salario1final = Number (salario1+abono+1*idade);
+}
+
+output.innerHTML =`
+Abono salarial: ${abono} <br>
+Próximos salários: ${salario1final} <br>
+`;
+
+
+
+</script>
+</body>
+</html>
