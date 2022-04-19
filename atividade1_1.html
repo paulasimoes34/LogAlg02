@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt=BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +9,25 @@
 <body>
 
    <script>
+    
+      // criar as váriaveis
        var number1 = Number (prompt ('Insira um número:'));
        var number2 = Number (prompt ('Insira outro número:'));
+       
+       // para exibir na página precisamos coloca console.log
        console.log(number1, number2);
 
-       document.write(' Resultado da soma entre' + number1 + ' e ' + number2 + ' e ' + (number1 + number2));
-       document.write(' Resultado da subtração entre' + number1 + 'e' + number2 + 'e' + (number1 - number2));
-
-
+       // O simbolo + é concatenar e não somar
+       // Para somar usamos o método 'Number()' que está lá na var
+       console.log(number1 + number2);
+       console.log(number1 - number2);
+     
+       // ${variável} 
+       // document.write serve para o documento aparecer na página
+       document.write(`O resultado da soma entre ${number1} e ${number2} é ${number1 + number2}.`);
+       document.write(`O resultado da subtração entre ${number1} e ${number2} é ${number1 - number2}.`);
+   
+   
    </script>; 
     
 </body>

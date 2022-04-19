@@ -9,33 +9,39 @@
 <body>
     
 <div id="output"></div>
+
 <script>
 
-var nomeFun1 = prompt( 'Nome do funcionario');
-var meses1 = Number (prompt('Tempo de serviço'));
-var salario1 = Number (prompt('O salário médio em reais'));
-var idade = Number (prompt('idade do funcionário'));
-output.innerHTML = `
-Nome: ${nomeFun1} <br> 
-Tempo de serviço: ${meses1} <br> 
-Salário médio: ${salario1} <br> 
-Idade: ${idade} <br> 
+var nome = prompt('Nome do funcionário');
+var meses = Number (prompt('Tempo de serviço em meses'));
+var salario = Number (prompt('O salário médio em reais'));
+var idade = Number (prompt('Idade do funcionário'));
 
-`;
+var dados = 
+`
+Nome: ${nome} <br> 
+Tempo de serviço: ${meses} <br> 
+salario médio: ${salario} <br> 
+Idade: ${idade} <br> `
+;
 
-if(meses1>=12){
-    var abono = Number ((salario1 *10/100));
-    var salario1final = Number (salario1+abono+1*idade);
+if(meses > 12){
+    var abono = Number ((salario *10/100));
+    var salariofinal = Number (salario+abono+1*idade);
+abono = abono + idade;
 }
 else{
-    var abono = Number (salario1*0);
-    var salario1final = Number (salario1+abono+1*idade);
+    var abono = Number (salario*0);
+    var salariofinal = Number (salario+abono+1*idade);
 }
 
 output.innerHTML =`
 Abono salarial: ${abono} <br>
-Próximos salários: ${salario1final} <br>
+Próximos salários: ${salariofinal} <br>
 `;
+output.innerHTML = dados;
+
+
 
 
 
