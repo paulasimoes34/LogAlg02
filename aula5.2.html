@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2.1</title>
+</head>
+<body>
+    
+    <script>
+        class Serie {
+         
+            #titulo
+            #episodios
+
+            constructor(titulo) { this.setTitulo(titulo) }
+
+            setTitulo(titulo) { this.#titulo = titulo }
+            setEpisodios(episodios) { this.#episodios = episodios }
+
+            getTitulo() { return this.#titulo }
+            getEpisodios() { return this.#episodios }
+
+        }
+        
+        class Comédia extends Serie {
+
+             #tempo
+
+            constructor(titulo, episodios, tempo ) {
+                super(titulo) // classe pai, que é o codigo                
+                this.setTitulo(titulo)
+                this.setEpisodios(episodios)
+                this.setTempo(tempo)
+        }
+        
+            setTempo(tempo) { this.#tempo = tempo }
+
+            getTempo() { return this.#tempo }
+            
+    }
+        class Suspense extends Serie {
+
+            #grau
+
+            constructor(titulo, episodios, grau ) {
+                super(titulo) // classe pai, que é o codigo                
+                this.setTitulo(titulo)
+                this.setEpisodios(episodios)
+                this.setGrau(grau)
+        }
+        
+            setGrau(grau) { this.#grau = grau }
+
+            getGrau() { return this.#grau }
+            
+
+    }
+
+        
+    
+    var comedia = new Comédia ('O indivíduo', '7', '2 horas')
+    console.log(comedia)
+
+    var suspense = new Suspense ('Morte', '2', '1h30m')
+    console.log(suspense)
+
+
+    </script>
+</body>
+</html>

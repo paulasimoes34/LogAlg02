@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5.1</title>
+
+</head>
+
+<body>
+
+    <script>
+
+        class Produto {
+
+            #origem
+            #preco
+            #marca
+            #codigo
+            #descricao
+
+            constructor(codigo) { this.setCodigo(codigo) }
+
+            setOrigem(origem) { this.#origem = origem }
+            setPreco(preco) { this.#preco = preco }
+            setMarca(marca) { this.#marca = marca }
+            setCodigo(codigo) { this.#codigo = codigo }
+            setDescricao(descricao) { this.#descricao = descricao }
+
+            getOrigem() { return this.#origem }
+            getPreco() { return this.#preco }
+            getMarca() { return this.#marca }
+            getCodigo() { return this.#codigo }
+            getDescricao() { return this.#descricao }
+
+        }
+
+        class Vestuario extends Produto {
+
+            #tipo
+            #tamanho
+            #cor
+
+            constructor(codigo, tipo) {
+                super(codigo) // classe pai, que é o codigo                
+                this.setTipo(tipo)
+            }
+
+            setTipo(tipo) { this.#tipo = tipo }
+            setTamanho(tamanho) { this.#tamanho = tamanho }
+            setCor(cor) { this.#cor = cor }
+
+            getTipo() { return this.#tipo }
+            getTamanho() { return this.#tamanho }
+            getCor() { return this.#cor }
+
+        }
+        class Calca extends Vestuario {
+
+        }
+
+        class Alimentos extends Produto {
+            #sabor
+            #textura
+
+            constructor(codigo, sabor, textura) {
+                super(codigo) // classe pai, que é o codigo   
+                this.setSabor(sabor)
+                this.setTextura(textura)
+            }
+
+            setSabor(sabor) { this.#sabor = sabor }
+            setTextura(textura) { this.#textura = textura }
+
+            getSabor() { return this.#sabor }
+            getTextura() { return this.#textura }
+
+        }
+
+        class Moveis extends Produto {
+            #cor
+            #tamanho
+
+            constructor(codigo, cor, tamanho) {
+                super(codigo) // classe pai, que é o codigo   
+                this.setTamanho(tamanho)
+                this.setCor(cor)
+            }
+
+            setCor(cor) { this.#cor = cor }
+            setTamanho(tamanho) { this.#tamanho = tamanho }
+
+            getCor() { return this.#cor }
+            getTamanho() { return this.#tamanho }
+
+        }
+
+
+        var banana = new Alimentos('1234', 'doce', 'Mole')
+        banana.setDescricao('cascuda');
+        banana.setOrigem ('Belo Horizonte')
+        banana.setMarca ('Falsificada')
+        banana.setPreco ('3,99')
+
+        var guardaroupas = new Moveis('0101', 'Marrom', 'Grande')
+        guardaroupas.setDescricao ('Solteiro')
+        guardaroupas.setOrigem ('São Paulo')
+        guardaroupas.setMarca ('Linea')
+        guardaroupas.setPreco ('1.300')
+
+
+
+        var bone = new Vestuario('Boné', 'Chapéu')
+        var jeans = new Calca('CODIGO', 'longas')
+
+        console.log(jeans)
+        console.log(bone)
+        console.log('Banana',banana)
+        console.log('Guarda-Roupas',guardaroupas)
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
